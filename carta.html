@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Pello 💜</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #f3e8ff, #ede9fe);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .carta {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .corazon {
+      font-size: 40px;
+      color: purple;
+      animation: latido 1s infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes latido {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .texto {
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.6;
+      white-space: pre-line;
+      min-height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="carta">
+    <div class="corazon">💜</div>
+
+    <img src="amigos.png" alt="Mejores amigos">
+
+    <div id="texto" class="texto"></div>
+  </div>
+
+  <script>
+    const mensaje = `Eres una gran persona, gracias por escucharme cuando más lo necesito,
+por estar ahí para mí y por apoyarme siempre.
+Aunque a veces no lo hacías jajajaja, no importa,
+sigues siendo el mejor.
+
+Tienes muchos sueños y deseo de corazón que los cumplas todos.
+Que Dios te regale muchos años más de vida
+y te llene de bendiciones.
+Que todo tu esfuerzo valga la pena en el futuro.
+
+Te quiero mucho, gordo 💜
+No sé qué me hiciste para quererte tanto.
+Agradezco ese día en que el bendito juego nos emparejó,
+porque gracias a eso te tengo en mi vida.
+
+PD: ya te estás poniendo viejito
+y hay que comprarte un bastón 😜`;
+
+    let i = 0;
+    function escribir() {
+      if (i < mensaje.length) {
+        document.getElementById("texto").innerHTML += mensaje.charAt(i);
+        i++;
+        setTimeout(escribir, 40);
+      }
+    }
+
+    escribir();
+  </script>
+
+</body>
+</html>
